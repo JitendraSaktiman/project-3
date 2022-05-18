@@ -96,7 +96,7 @@ const Createuser = async function (req, res) {
         if (body.title === "Mr" || body.title === "Miss" || body.title === "Mrs") {
 
             let userCreate = await usermodel.create(body)
-            return res.status(200).send({ Status: true, message: 'Success', data: userCreate })
+            return res.status(201).send({ Status: true, message: 'Success', data: userCreate })
         }
         return res.status(400).send({ Status: false, message: " Please enter a valid title you can use only anyone from these Mr/Miss/Mrs" })
     }
@@ -153,7 +153,7 @@ const login = async function (req, res) {
         }, 'FunctionUp Group55', { expiresIn: '86400s' });    // token expiry for 24hrs
 
         res.setHeader("x-api-key", user_token);
-        return res.status(201).send({ status: true, data: {token:user_token }});
+        return res.status(200).send({ status: true, data: {token:user_token }});
     }
     catch (err) {
         return res.status(500).send({ Status: false, message: err.message })

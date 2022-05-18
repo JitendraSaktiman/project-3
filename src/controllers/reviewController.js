@@ -65,7 +65,7 @@ const CreateReview = async function (req, res) {
             return res.status(400).send({ Status: false, message: " rating min 1, max 5 " })
         }
 
-        let result = {}
+        // let result = {}
         let bookId = data
         let reviewedBy = body.reviewedBy
         let rating = body.rating

@@ -15,7 +15,7 @@ router.post('/login', userController.login)
 
 // ---------------------------BOOK API -------------------------------------***
 
-router.post('/books',Middleware.Mid1,BookController.Bookcreate)
+router.post('/books' ,BookController.Bookcreate)
 
 router.get('/books',Middleware.Mid1,BookController.GetBook)
 
@@ -35,3 +35,5 @@ router.delete('/books/:bookId/review/:reviewId',ReviewController.ReviewDelete)
 
 
 module.exports = router;
+
+//,Middleware.Mid1,

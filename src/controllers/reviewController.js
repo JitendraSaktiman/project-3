@@ -88,6 +88,8 @@ const CreateReview = async function (req, res) {
 
         //====================================================================================//
         let reviewsData = await reviewModel.find({bookId:data,isDeleted:false}).select({ _id: 1, bookId: 1, reviewedBy: 1, reviewedAt: 1, rating: 1, review: 1 })
+        //destructure
+
         const { _id, title, excerpt, userId, category, subcategory, deleted, reviews, deletedAt, releasedAt, createdAt, updatedAt } = UpdateCountReview
         let display ={}
         display={_id, title, excerpt, userId, category, subcategory, deleted, reviews, deletedAt, releasedAt, createdAt, updatedAt,reviewsData}
